@@ -10,6 +10,7 @@ const { Server } = require("socket.io");
 const mainRouter = require("./routes/main.router");
 
 dotenv.config();
+app.use(cors({ origin: "*" }));
 
 const { initRepo } = require("./controllers/init");
 const { addRepo } = require("./controllers/add");
