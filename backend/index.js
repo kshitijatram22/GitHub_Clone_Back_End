@@ -10,7 +10,7 @@ const { Server } = require("socket.io");
 const mainRouter = require("./routes/main.router");
 
 dotenv.config();
-app.use(cors({ origin: "*" }));
+
 
 const { initRepo } = require("./controllers/init");
 const { addRepo } = require("./controllers/add");
@@ -75,8 +75,8 @@ function startServer() {
   // Middleware
   app.use(bodyParser.json());
   app.use(express.json());
-  app.use(cors({ origin: "*" }));
-
+  // app.use(cors({ origin: "*" }));
+app.use(cors({ origin: "https://git-hub-clone-front-end-193i.vercel.app" }));
   // Routes
   app.use("/", mainRouter);
 
